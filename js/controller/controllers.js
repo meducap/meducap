@@ -53,7 +53,7 @@ meducap.controller('AppCtrl', function($scope, $http, $q,$location, auth) {
         $scope.firebaseURL = url;
         var def = $q.defer();
         $scope.loading = true;
-        $http.get($scope.firebaseURL + '.json').success(function(data) {
+        $http.get(url + '.json').success(function(data) {
             var ctr = 0;
             var maxCount = 0;
             var maxItem = {};
@@ -79,7 +79,7 @@ meducap.controller('AppCtrl', function($scope, $http, $q,$location, auth) {
             $scope.headerData = temp;
             $scope.loaded = true;
             $scope.loading = false;
-            callback($scope.firebaseData,$scope.headerData);
+            callback($scope.firebaseData,temp);
             def.resolve(res);
         });
         return def.promise;
