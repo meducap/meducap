@@ -1,0 +1,129 @@
+
+<div class="animated fadeIn" id="dashboards-geographic"
+     data-layout="default-sidebar-2" data-sidebar="primary"
+     data-navbar="primary" data-controller="dashboards" data-view="geographic">
+<nav class="navbar-1">
+    <ul class="nav nav-inline navbar-left">
+        <li class="nav-item">
+            <a class="nav-link toggle-layout" href="">
+                <i class="material-icons menu">menu</i>
+            </a>
+        </li>
+
+    </ul>
+    <span class="welcome">Hello!, {{currentUser.username}}</span>
+    <div class="dropdown user-dropdown">
+        <a class="dropdown-toggle no-after" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="badge badge-40">
+                <span class="tag tag-sm tag-rounded tag-warning">1</span>
+                <img src="assets/img/icon.png" class="max-w-40 img-circle" alt="badge" />
+            </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right from-right">
+            <!--<a class="dropdown-item" href="#">-->
+                <!--<i class="material-icons icon">email</i>-->
+                <!--<span class="title">Inbox</span>-->
+                <!--<span class="tag tag-pill tag-raised tag-danger tag-xs">New</span>-->
+            <!--</a>-->
+            <!--<a class="dropdown-item" href="#">-->
+                <!--<i class="material-icons icon">grade</i>-->
+                <!--<span class="title">Messages</span>-->
+                <!--<span class="tag tag-outline-primary tag-rounded tag-xs">5</span>-->
+            <!--</a>-->
+            <!--<a class="dropdown-item" href="#">-->
+                <!--<i class="material-icons icon">settings</i>-->
+                <!--<span class="title">Profile</span>-->
+            <!--</a>-->
+            <!--<a class="dropdown-item" href="#">-->
+                <!--<i class="material-icons icon">alarm</i>-->
+                <!--<span class="title">Lock screen</span>-->
+            <!--</a>-->
+            <a class="dropdown-item" ng-click="logout()">
+                <i class="material-icons icon">power_settings_new</i>
+                <span class="title">Logout</span>
+            </a>
+        </div>
+    </div>
+    <a class="navbar-right btn btn-flat toggle-right-sidebar" href="">
+        <i class="material-icons">arrow_forward</i>
+    </a>
+</nav>
+<div class="jumbotron-1">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid">
+            <button class="btn btn-rounded btn-outline-primary">Message</button>
+            <button class="btn btn-rounded btn-outline-primary">Follow</button>
+            <h1 class="display-3">Welcome</h1>
+
+            <button type="button" class="btn btn-secondary bmd-btn-fab" data-toggle="dropdown">
+                <i class="fa fa-ellipsis-v"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right from-right">
+                <!--<a class="dropdown-item" href="#">-->
+                    <!--<i class="material-icons icon">email</i>-->
+                    <!--<span class="title">Inbox</span>-->
+                    <!--<span class="tag tag-pill tag-raised tag-danger tag-xs">New</span>-->
+                <!--</a>-->
+                <!--<a class="dropdown-item" href="#">-->
+                    <!--<i class="material-icons icon">grade</i>-->
+                    <!--<span class="title">Messages</span>-->
+                    <!--<span class="tag tag-outline-primary tag-rounded tag-xs">5</span>-->
+                <!--</a>-->
+                <!--<a class="dropdown-item" href="#">-->
+                    <!--<i class="material-icons icon">settings</i>-->
+                    <!--<span class="title">Profile</span>-->
+                <!--</a>-->
+                <!--<a class="dropdown-item" href="#">-->
+                    <!--<i class="material-icons icon">alarm</i>-->
+                    <!--<span class="title">Lock screen</span>-->
+                <!--</a>-->
+                <a class="dropdown-item" ng-click="logout()">
+                    <i class="material-icons icon">power_settings_new</i>
+                    <span class="title">Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-xs-12 main">
+            <div class="page-on-top">
+                <div class="row">
+
+                    <div class="col-sm-6  text-center">
+                        <div class="box-shadow-z1">
+                            <img src="assets/img/med2.png">
+                            <button ng-disabled="!healthCareLoaded"
+                                    csv-header="headerH"
+                                    ng-csv="download()"
+                                     class="btn btn-block btn-primary" field-separator="," decimal-separator=".">
+                                Load Health Center Data
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <div class="box-shadow-z1">
+                            <img src="assets/img/edu.png">
+                            <button ng-disabled="!schoolLoaded"
+                                    csv-header="headerS"
+                                    ng-csv="download()" class="btn btn-block btn-primary" field-separator="," decimal-separator=".">
+                                Load School Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="left-sidebar-backdrop"></div>
+</div>
+

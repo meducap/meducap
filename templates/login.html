@@ -1,0 +1,29 @@
+<div id="pages-sign-in" data-layout="empty-view-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 main">
+                <form class="sign-in" name="signinForm" ng-submit="login(user)">
+                    <h3>Sign in</h3>
+                    <p>
+                        Please enter your email address and password to login
+                    </p>
+                    <div class="form-group" ng-class="{'has-danger': errorLogin}">
+                        <label for="sign-in-2-email" class="bmd-label-floating">Username</label>
+                        <input type="text" ng-model="user.username" id="sign-in-2-email" class="form-control">
+                        <span class="bmd-help">Please enter your username</span>
+                        <small ng-show="errorLogin" class="form-control-feedback">Wrong credentials, please try again!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="sign-in-1-password" class="bmd-label-floating">Passcode</label>
+                        <input type="number" ng-model="user.password" id="sign-in-1-password" class="form-control">
+                        <span class="bmd-help">Please enter your passcode</span>
+                    </div>
+
+                    <button ng-disabled="signinForm.$invalid" class="btn btn-raised btn-lg btn-secondary btn-block" type="submit">Sign in</button>
+                    <!--<p class="sign-up-link">Don't have an account? <a href="http://localhost:6001/layouts.empty-view-1/pages/sign-up-2">Sign up here</a></p>-->
+                    <p class="copyright">&copy; Copyright 2016</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
