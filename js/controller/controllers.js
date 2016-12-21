@@ -89,10 +89,10 @@ meducap.controller('AppCtrl', function($scope, $http, $q,$location, auth) {
         return $scope.headerData;
     };
 
-    $scope.download = function() {
-        return _.map($scope.firebaseData, function(item) {
+    $scope.download = function(firebaseData, header1) {
+        return _.map(firebaseData, function(item) {
             var obj = {};
-            _.each($scope.headerData, function(header) {
+            _.each(header1, function(header) {
                 obj[header] = item[header];
                 if (header.indexOf("date") > -1) {
                     obj[header] = moment(item[header]).format('YYYY-MM-DD');
@@ -105,10 +105,12 @@ meducap.controller('AppCtrl', function($scope, $http, $q,$location, auth) {
     $scope.load(healthcareUri, function(firebaseData,headerData){
         $scope.healthCareLoaded = true;
         $scope.headerH = headerData;
+        $scope.firebaseH = firebaseData;
     });
     $scope.load(schoolUri, function(firebaseData,headerData) {
         $scope.schoolLoaded = true;
         $scope.headerS = headerData;
+        $scope.firebaseS = firebaseData;
     });
 
 });

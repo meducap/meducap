@@ -97,7 +97,7 @@
                             <img src="assets/img/med2.png">
                             <button ng-disabled="!healthCareLoaded"
                                     csv-header="headerH"
-                                    ng-csv="download()"
+                                    ng-csv="download(firebaseH, headerH)"
                                      class="btn btn-block btn-primary" field-separator="," decimal-separator=".">
                                 Load Health Center Data
                             </button>
@@ -109,7 +109,7 @@
                             <img src="assets/img/edu.png">
                             <button ng-disabled="!schoolLoaded"
                                     csv-header="headerS"
-                                    ng-csv="download()" class="btn btn-block btn-primary" field-separator="," decimal-separator=".">
+                                    ng-csv="download(firebaseS, headerS)" class="btn btn-block btn-primary" field-separator="," decimal-separator=".">
                                 Load School Data
                             </button>
                         </div>
